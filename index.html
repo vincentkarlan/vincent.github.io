@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css"href="style.css">
+    <script src="script.js"></script>
+  <title>Final</title>
+</head>
+
+<body> 
+    <!-- Video SET AutoPlay AND Fullscreen AND Repeat -->
+    <video autoplay loop id="myVideo">
+        <source src=video.mp4 type="video/mp4">
+    </video>
+
+      <!-- Control Panel  -->
+      <div class="content">
+        <h1 style= "font-family: 'Courier New', Courier, monospace"><u>Options</u></h1>
+        <p>
+          <!-- PLAY / PAUSE-->
+          <button style="float:left"id="btn" onclick="myFunction()">Pause</button>
+          <!-- SOUND -->
+          <div style="float:right">
+            <button onclick="mute()" type="button">Mute</button>
+            <button onclick="unmute()" type="button">Unmute</button>
+          </div>
+        </p>  
+      </div>     
+</body>
+
+<script>
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("btn");
+    
+    /*Control Video*/
+    function myFunction() {
+      //IF video is playing, display 'Pause' button.
+      if (video.paused) {
+          video.play();
+          btn.innerHTML = "Pause";
+      }
+      //IF video is in pause, display 'Play' button.
+      else {
+          video.pause();
+          btn.innerHTML = "Play";
+      }
+    }
+    
+    /*Control Sound*/
+    function mute() { 
+      video.muted = true;
+    } 
+    function unmute() { 
+      video.muted = false;
+    } 
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
